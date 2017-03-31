@@ -1,11 +1,11 @@
 # git describe --tags
-%global commit 502b413
+%global commit 843dd06
 %global vermagic 2.9
-%global snapshot .git20170329.%{commit}
+%global snapshot .git20170331.%{commit}
 
 Name:           rtags
 Version:        %{vermagic}
-Release:        1%{?snapshot}%{?dist}
+Release:        2%{?snapshot}%{?dist}
 Summary:        A c/c++ client/server indexer for c/c++/objc[++]
 
 License:        GPLv3+
@@ -59,5 +59,8 @@ popd build
 
 
 %changelog
+* Fri Mar 31 2017 Jajauma's Packages <jajauma@yandex.ru> - 2.9-2.git20170331.843dd06
+- Update to latest git snapshot
+
 * Wed Mar 29 2017 Jajauma's Packages <jajauma@yandex.ru> - 2.9-1.git20170329.502b413
 - Initial release
