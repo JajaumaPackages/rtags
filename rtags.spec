@@ -1,18 +1,15 @@
-# git describe --tags
-%global commit 2af4d6a3
-%global vermagic 2.14
-%global snapshot .git20170914.%{commit}
+%global gitdate 20171120
+%global gitversion 2.15
+%global gitcommit 7de799d
 
 Name:           rtags
-Version:        %{vermagic}
-Release:        1%{?snapshot}%{?dist}
+Version:        %{gitversion}
+Release:        1.git%{gitdate}.%{gitcommit}%{?dist}
 Summary:        A c/c++ client/server indexer for c/c++/objc[++]
 
 License:        GPLv3+
 URL:            https://github.com/Andersbakken/rtags
-# git clone --recursive https://github.com/Andersbakken/rtags.git
-# tar cfJ rtags.tar.xz  rtags/
-Source0:        rtags.tar.xz
+Source0:        rtags.tar.bz2
 
 BuildRequires:  cmake >= 2.8.6
 BuildRequires:  llvm-devel >= 3.3
@@ -67,6 +64,9 @@ popd build
 
 
 %changelog
+* Mon Nov 20 2017 Jajauma's Packages <jajauma@yandex.ru> - 2.15-1.git20171120.7de799d
+- Update to latest git snapshot
+
 * Thu Sep 14 2017 Jajauma's Packages <jajauma@yandex.ru> - 2.14-1.git20170914.2af4d6a3
 - Update to latest git snapshot
 
