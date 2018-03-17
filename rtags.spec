@@ -1,6 +1,6 @@
-%global gitdate 20171120
-%global gitversion 2.15
-%global gitcommit 7de799d
+%global gitdate 20180317
+%global gitversion 2.18
+%global gitcommit 6f084a3
 
 Name:           rtags
 Version:        %{gitversion}
@@ -64,6 +64,9 @@ popd build
 
 
 %changelog
+* Sat Mar 17 2018 Jajauma's Packages <jajauma@yandex.ru> - 2.18-1.git20180317.6f084a3
+- Update to latest git snapshot
+
 * Mon Nov 20 2017 Jajauma's Packages <jajauma@yandex.ru> - 2.15-1.git20171120.7de799d
 - Update to latest git snapshot
 
