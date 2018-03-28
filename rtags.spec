@@ -1,6 +1,6 @@
-%global gitdate 20180317
+%global gitdate 20180328
 %global gitversion 2.18
-%global gitcommit 6f084a3
+%global gitcommit a595d13
 
 Name:           rtags
 Version:        %{gitversion}
@@ -17,8 +17,6 @@ BuildRequires:  clang-devel >= 3.3
 BuildRequires:  zlib-devel
 BuildRequires:  openssl-devel
 BuildRequires:  bash-completion
-BuildRequires:  emacs
-Requires:       emacs-filesystem
 
 %description
 RTags is a client/server application that indexes C/C++ code and keeps a
@@ -39,7 +37,7 @@ export CXX=/usr/bin/clang++
 # hide FORTIFY_SOURCE redefinition warning
 export CFLAGS="$(echo %{optflags} | sed -e 's/-Wp,-D_FORTIFY_SOURCE=2//')"
 export CXXFLAGS="$CFLAGS"
-%{cmake} ..
+%{cmake} -DRTAGS_NO_ELISP_FILES=1 ..
 make %{?_smp_mflags}
 popd
 
@@ -58,12 +56,15 @@ popd build
 %{_bindir}/rp
 %{_bindir}/gcc-rtags-wrapper.sh
 %{_datadir}/bash-completion/
-%{_emacs_sitelispdir}/rtags/
 %{_mandir}/man7/rc.7*
 %{_mandir}/man7/rdm.7*
 
 
 %changelog
+* Wed Mar 28 2018 Jajauma's Packages <jajauma@yandex.ru> - 2.18-1.git20180328.a595d13
+- Update to latest git snapshot
+- Disable elisp support
+
 * Sat Mar 17 2018 Jajauma's Packages <jajauma@yandex.ru> - 2.18-1.git20180317.6f084a3
 - Update to latest git snapshot
 
